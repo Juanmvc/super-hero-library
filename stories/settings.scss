@@ -1,0 +1,17 @@
+/**
+ * Variables
+ */
+ @import './styleSettings/config/breakpoints';
+ @import './styleSettings/config/spacing';
+ @import './styleSettings/config/colors';
+
+ /**
+ * mixins
+ */
+@import './styleSettings/mixins/media';
+
+ /**
+ * functions
+ */
+@import './styleSettings/functions/size';
+@import './styleSettings/functions/spacing';

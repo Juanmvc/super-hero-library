@@ -1,0 +1,6 @@
+@function spacing ($number) {
+    $spacingValue: $number * 8;
+  
+    @return #{$spacingValue}px;
+  }
+  

@@ -1,0 +1,34 @@
+@import "../settings.scss";
+
+.comic-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  cursor: pointer;
+  height: 330px;
+  width: 180px;
+  text-decoration: inherit;
+  
+  &__image {
+    height: 75%;
+    width: 100%;  
+  }
+
+  &__title {
+    color:  $color-black;
+    font-weight: 500;
+    font-size: 16px;
+    align-self: start;
+    margin: 0px;
+  }
+
+  &__subtitle {
+    color:  $color-black;
+    font-weight: 400;
+    font-size: 12px;
+    align-self: start;
+    margin: 0px;
+  }
+
+}
