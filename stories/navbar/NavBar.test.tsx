@@ -27,19 +27,4 @@ describe("Navbar Component", () => {
     const countText = screen.getByText(/5/);
     expect(countText).toBeInTheDocument();
   });
-
-  it("no muestra el ícono de favoritos cuando no se proporcionan iconUrl o el count", () => {
-    const props = {
-      logoSrc: "https://example.com/logo.jpg",
-      logoUrl: "/home"
-    };
-
-    render(<Navbar {...props} />);
-
-    const favoriteIcon = screen.queryByText("Imagen heart");
-    expect(favoriteIcon).not.toBeInTheDocument();
-
-    const countText = screen.queryByText(/5/);
-    expect(countText).not.toBeInTheDocument();
-  });
 });

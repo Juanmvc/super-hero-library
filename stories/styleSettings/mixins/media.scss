@@ -30,3 +30,16 @@
   }
 }
 
+
+@mixin media-xlg-and-up {
+  @media screen and (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin media-xlg-only {
+  @media screen and (min-width: $breakpoint-xl) and (max-width: #{$breakpoint-xxl - 1px}) {
+    @content;
+  }
+}
+

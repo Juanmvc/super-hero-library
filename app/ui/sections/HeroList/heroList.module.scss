@@ -1,0 +1,43 @@
+@import "../../../../stories/settings.scss";
+
+.hero-list {
+  padding: spacing(2);
+  max-width: 1470px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-md-and-up {
+    padding: spacing(3);
+  }
+
+  &__filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding: spacing(1.5);
+    gap: spacing(1);
+    margin-bottom: spacing(2);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: spacing(1);
+    justify-items: center;
+
+    @include media-md-and-up {
+      grid-template-columns: repeat(4, 1fr);
+      gap: spacing(1);
+    }
+
+    @include media-lg-and-up {
+      grid-template-columns: repeat(6, 1fr);
+      gap: spacing(1);
+    }
+
+    @include media-xlg-and-up {
+      grid-template-columns: repeat(7, 1fr);
+      gap: spacing(1);
+    }
+  }
+}

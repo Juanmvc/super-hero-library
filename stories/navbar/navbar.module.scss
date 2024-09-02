@@ -1,12 +1,18 @@
 @import "../settings.scss";
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: spacing(1.5);
-  margin-bottom: spacing(6);
   background-color: $color-black;
+
+  &__wrapper {
+    max-width: 1470px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: spacing(1.5);
+    margin-bottom: spacing(6);
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   &__logo-link {
   }

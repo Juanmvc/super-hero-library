@@ -1,11 +1,15 @@
 import { ComicProps } from './Comic'
 
+export type HeroWithFavorites = {
+    favorites: Hero[];
+}
+
 export type HeroProps = {
     id: number
     name: string
     imageUrl: string
     description: string
-    isFavorite: boolean
+    _isFavorite: boolean
     comics: ComicProps[]
 }
 
@@ -14,7 +18,7 @@ export type HeroPrimitiveProps = {
     name: string
     imageUrl: string
     description: string
-    isFavorite: boolean
+    _isFavorite: boolean
     comics: ComicProps[]
 }
 
@@ -27,7 +31,7 @@ export default class Hero {
 
     readonly description: string
 
-    private _isFavorite: boolean
+    public _isFavorite: boolean
 
     readonly comics: ComicProps[]
 
@@ -36,26 +40,15 @@ export default class Hero {
         name,
         imageUrl,
         description,
-        isFavorite,
+        _isFavorite = false,
         comics,
     }: HeroProps) {
         this.id = id
         this.name = name
         this.imageUrl = imageUrl
         this.description = description
-        this._isFavorite = isFavorite
+        this._isFavorite = _isFavorite
         this.comics = comics
-    }
-
-    get isFavorite(): boolean {
-        return this._isFavorite
-    }
-
-    set isFavorite(value: boolean) {
-        if (typeof value !== 'boolean') {
-            throw new Error('Type for isFavorite must be boolean')
-        }
-        this._isFavorite = value
     }
 
     toPrimitive(): HeroPrimitiveProps {
@@ -64,7 +57,7 @@ export default class Hero {
             name: this.name,
             imageUrl: this.imageUrl,
             description: this.description,
-            isFavorite: this.isFavorite,
+            _isFavorite: this._isFavorite,
             comics: this.comics,
         }
     }
@@ -74,7 +67,7 @@ export default class Hero {
         name,
         imageUrl,
         description,
-        isFavorite,
+        _isFavorite,
         comics,
     }: HeroPrimitiveProps): Hero {
         return new Hero({
@@ -82,7 +75,7 @@ export default class Hero {
             name,
             imageUrl,
             description,
-            isFavorite,
+            _isFavorite,
             comics,
         })
     }
