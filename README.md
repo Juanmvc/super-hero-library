@@ -55,6 +55,9 @@ Open [http://localhost:6006](http://localhost:6006) with your browser to see the
 
 In this case I didn't find it necessary to do so since it would have made the application somewhat slower. In the end, with the transformations from primitives to entities that you have to do in next when you go from ‘server’ to ‘client’, you invest execution time and in this application it wasn't necessary.
 
+### Texts
+With some more time I would use a library like next-i18next and have all the fixed texts in a json to consume them from and help the application to be multilingual in the future (as well as being easier to maintain this way).
+
 ### Organization of Components and Projects
 **Standalone Components**: In larger projects, I would be inclined to move component definitions out of Storybook, placing them in a separate package. This would allow sharing these components as dependencies between different projects, improving code reusability and maintainability.
   
