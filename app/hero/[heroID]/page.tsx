@@ -5,6 +5,7 @@ import marvelLogo from "../../../public/logos/marvel-logo.svg";
 import HeroHeader from "@/app/ui/sections/HeroHeader";
 import ComicList from "@/app/ui/sections/ComicList";
 import getComic from "@/app/core/application/getComic";
+import { ComicProps } from "@/app/core/domain/entities/Comic";
 
 
 async function PodcastEpisodeDetailPage(context: {
@@ -13,10 +14,9 @@ async function PodcastEpisodeDetailPage(context: {
   const heroID = +context.params.heroID;
 
   const hero = await getHero({ id: heroID });
-  const heroPrimitive = hero.toPrimitive();
 
   const heroComics = await Promise.all(
-    heroPrimitive.comics.map(async (comic) => {
+    hero.comics.map(async (comic: ComicProps) => {
       const comicResult = await getComic({ id: comic.id });
       return comicResult;
     })
@@ -25,7 +25,7 @@ async function PodcastEpisodeDetailPage(context: {
   return (
     <div>
       <Navbar logoSrc={marvelLogo} logoUrl={"/"} iconUrl={"/"}/>
-      <HeroHeader heroPrimitive={heroPrimitive}/> 
+      <HeroHeader hero={hero}/> 
       <ComicList comicList={heroComics} />
     </div>
   );

@@ -2,29 +2,24 @@
 import React, { useCallback } from 'react'
 import classes from './heroHeader.module.scss'
 import Image from 'next/image'
-import Hero, { HeroPrimitiveProps } from '@/app/core/domain/entities/Hero'
+import { HeroProps } from '@/app/core/domain/entities/Hero'
 import { useFavorites } from '../../hooks/useFavorites'
 import heartFullIcon from '../../../../public/icons/heart-full.svg'
 import heartEmptyIcon from '../../../../public/icons/heart-empty.svg'
 
 const MODULE_PREFIX = 'hero-header'
 
-export default function HeroHeader({ heroPrimitive }: { heroPrimitive: HeroPrimitiveProps }) {
+export default function HeroHeader({ hero }: { hero: HeroProps }) {
     const { favorites, addFavorite, removeFavorite } = useFavorites()
 
-    const hero = Hero.fromPrimitive(heroPrimitive);
-
-    const handleFavoriteToggle = useCallback(
-        (hero: Hero) => {
-            if (favorites.find((h) => h.id === hero.id) !== undefined) {
-                removeFavorite(hero.id)
-            } else {
-                hero._isFavorite = true
-                addFavorite(hero)
-            }
-        },
-        [favorites, addFavorite, removeFavorite]
-    )
+    const handleFavoriteToggle = useCallback((hero: HeroProps) => {
+        if (favorites.find(h => h.id === hero.id) !== undefined) {
+          removeFavorite(hero.id);
+        } else {
+          hero._isFavorite = true;
+          addFavorite(hero);
+        }
+      }, [favorites, addFavorite, removeFavorite]);
 
     return (
         <div className={classes[MODULE_PREFIX]}>

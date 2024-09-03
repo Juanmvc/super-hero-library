@@ -1,19 +1,19 @@
 "use client"
-import Hero from '@/app/core/domain/entities/Hero';
+import { HeroProps } from '@/app/core/domain/entities/Hero';
 import React, { createContext, useState, useContext } from 'react';
 
 interface FavoritesContextType {
-  favorites: Hero[];
-  addFavorite: (hero: Hero) => void;
+  favorites: HeroProps[];
+  addFavorite: (hero: HeroProps) => void;
   removeFavorite: (heroId: number) => void;
 }
 
 export const FavoritesContext = createContext<FavoritesContextType | undefined>(undefined);
 
 export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [favorites, setFavorites] = useState<Hero[]>([]);
+  const [favorites, setFavorites] = useState<HeroProps[]>([]);
 
-  const addFavorite = (hero: Hero) => {
+  const addFavorite = (hero: HeroProps) => {
     setFavorites(prev => [...prev, hero]);
   };
 

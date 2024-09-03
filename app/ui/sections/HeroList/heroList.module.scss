@@ -12,11 +12,10 @@
 
   &__filter {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: right;
-    padding: spacing(1.5);
-    gap: spacing(1);
-    margin-bottom: spacing(2);
+    gap: spacing(3);
+    margin-bottom: spacing(3);
   }
 
   &__grid {

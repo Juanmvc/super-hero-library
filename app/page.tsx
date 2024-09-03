@@ -6,12 +6,11 @@ import marvelLogo from "../public/logos/marvel-logo.svg";
 
 async function HeroListListPage() {
   const heroList = await getHeroList({ limit: 50});
-  const heroListPrimitive = heroList.map((hero) => hero.toPrimitive());
 
   return (
     <div>
       <Navbar logoSrc={marvelLogo} logoUrl={"/"} iconUrl={"/"}/>
-      <HeroList heroList={heroListPrimitive}/>
+      <HeroList initialHeroList={heroList}/>
     </div>
   );
 }

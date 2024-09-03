@@ -45,3 +45,5 @@ export class MarvelBaseRepository {
 export function md5Hash(str: string): string {
   return crypto.createHash('md5').update(str).digest('hex');
 }
+
+export const MARVEL_PUBLIC_KEY='3f0fc225b76ebf275551011c200522e3'

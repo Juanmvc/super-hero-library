@@ -1,4 +1,4 @@
-import { MarvelBaseRepository, md5Hash } from '../MarvelBaseRepository';
+import { MARVEL_PUBLIC_KEY, MarvelBaseRepository, md5Hash } from '../MarvelBaseRepository';
 
 export default class HeroRepository<T> extends MarvelBaseRepository {
   async getData({
@@ -6,7 +6,7 @@ export default class HeroRepository<T> extends MarvelBaseRepository {
   }: {
     id: number,
   }) {
-    const publicKey = process.env.MARVEL_PUBLIC_KEY ? process.env.MARVEL_PUBLIC_KEY : '';
+    const publicKey = MARVEL_PUBLIC_KEY;
     const privateKey = process.env.MARVEL_PRIVATE_KEY ? process.env.MARVEL_PRIVATE_KEY : '';
     const timeStamp = Date.now();
 
