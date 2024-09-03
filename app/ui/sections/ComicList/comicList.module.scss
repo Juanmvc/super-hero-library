@@ -12,7 +12,6 @@
     &__slider {
         display: flex;
         flex-direction: row;
-        place-content: center;
         gap: spacing(2);
         overflow-x: auto;
         overflow-y: hidden;
