@@ -14,12 +14,10 @@ export default function ComicList({
 
   return (
     <div className={classes[MODULE_PREFIX]}>
-      <div className={classes[`${MODULE_PREFIX}__title`]}>
-        COMICS
-      </div>
       <div data-testid="comic-list-slider" className={classes[`${MODULE_PREFIX}__slider`]}>
-        {comicList.map((comic) => (
+        {comicList.map((comic, index) => (
           <ComicCard
+            key={index}
             title={comic.title}
             imageSrc={comic.imageUrl || ''}
           />

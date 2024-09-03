@@ -9,7 +9,7 @@ async function HeroListListPage() {
 
   return (
     <div>
-      <Navbar logoSrc={marvelLogo} logoUrl={"/"} iconUrl={"/"}/>
+      <Navbar logoSrc={marvelLogo} logoUrl={"/"} iconUrl={"/favorites"}/>
       <HeroList initialHeroList={heroList}/>
     </div>
   );
