@@ -8,10 +8,12 @@ function adaptHeroList(marvelHeroes: MarvelHeroList): Hero[] {
         name: result.name,
         imageUrl: `${result.thumbnail.path}.${result.thumbnail.extension}`,
         description: result.description,
-        isFavorite: false, // Todos los héroes son inicialmente no favoritos
-        comics: []
-      };
-  
+        _isFavorite: false, //at start all heroes are not in the favorites list
+        comics: result.comics.items.map((comic) => {
+          const match = comic.resourceURI.match(/\/(\d+)$/);
+          const id = match ? match[1] : '';
+          return {title: comic.name, id: +id}      }),      
+    };
       return new Hero(hero);
     });
   }

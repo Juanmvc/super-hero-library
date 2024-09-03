@@ -1,16 +1,17 @@
 import { MarvelBaseRepository, md5Hash } from '../MarvelBaseRepository';
 
-export default class HeroListRepository<T> extends MarvelBaseRepository {
+export default class ComicRepository<T> extends MarvelBaseRepository {
   async getData({
-    limit = 50,
+    id,
   }: {
-    limit: number,
+    id: number,
   }) {
     const publicKey = process.env.MARVEL_PUBLIC_KEY ? process.env.MARVEL_PUBLIC_KEY : '';
     const privateKey = process.env.MARVEL_PRIVATE_KEY ? process.env.MARVEL_PRIVATE_KEY : '';
     const timeStamp = Date.now();
 
     const encryptedKey = md5Hash(timeStamp + privateKey + publicKey);
-    return await this.get<T>(`characters?limit=${limit}&ts=${timeStamp}&apikey=${publicKey}&hash=${encryptedKey}`);
+        
+    return await this.get<T>(`comics/${id}?ts=${timeStamp}&apikey=${publicKey}&hash=${encryptedKey}`);
   }
 }

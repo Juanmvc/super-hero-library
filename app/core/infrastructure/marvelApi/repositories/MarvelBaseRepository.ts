@@ -1,5 +1,6 @@
 import CustomError from '../../../domain/entities/CustomError';
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import crypto from 'crypto';
 
 const api: AxiosInstance = axios.create({
     headers: { 'Content-Type': 'application/json' },
@@ -39,4 +40,8 @@ export class MarvelBaseRepository {
   ): Promise<R> {
     return await api.post<T, R>(endPoint, data, config);
   }
+}
+
+export function md5Hash(str: string): string {
+  return crypto.createHash('md5').update(str).digest('hex');
 }
