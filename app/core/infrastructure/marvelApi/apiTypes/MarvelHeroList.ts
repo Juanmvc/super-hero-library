@@ -1,78 +1,66 @@
 export type MarvelHeroList = {
-  code: number,
-  status: string,
-  copyright: string,
-  attributionText: string,
-  attributionHTML: string,
-  data: {
-    offset: number,
-    limit: number,
-    total: number,
-    count: number,
-    results: [
-      {
-        id: number,
-        name: string,
-        description: string,
-        modified: Date,
-        resourceURI: string,
-        urls: [
-          {
-            type: string,
-            url: string
-          }
-        ],
-        thumbnail: {
-          path: string,
-          extension: string
-        },
-        comics: {
-          available: number,
-          returned: number,
-          collectionURI: string,
-          items: [
-            {
-              resourceURI: string,
-              name: string
+    code: number
+    status: string
+    copyright: string
+    attributionText: string
+    attributionHTML: string
+    data: {
+        offset: number
+        limit: number
+        total: number
+        count: number
+        results: Array<{
+            id: number
+            name: string
+            description: string
+            modified: string
+            resourceURI: string
+            urls: Array<{
+                type: string
+                url: string
+            }>
+            thumbnail: {
+                path: string
+                extension: string
             }
-          ]
-        },
-        stories: {
-          available: number,
-          returned: number,
-          collectionURI: string,
-          items: [
-            {
-              resourceURI: string,
-              name: string,
-              type: string
+            comics: {
+                available: number
+                returned: number
+                collectionURI: string
+                items: Array<{
+                    resourceURI: string
+                    name: string
+                }>
             }
-          ]
-        },
-        events: {
-          available: number,
-          returned: number,
-          collectionURI: string,
-          items: [
-            {
-              resourceURI: string,
-              name: string
+            stories: {
+                available: number
+                returned: number
+                collectionURI: string
+                items: Array<{
+                    resourceURI: string
+                    name: string
+                    type: string
+                }>
             }
-          ]
-        },
-        series: {
-          available: number,
-          returned: number,
-          collectionURI: string,
-          items: [
-            {
-              resourceURI: string,
-              name: string
+            events: {
+                available: number
+                returned: number
+                collectionURI: string
+                items: Array<{
+                    resourceURI: string
+                    name: string
+                }>
             }
-          ]
-        }
-      }
-    ]
-  },
-  etag: string
+            series: {
+                available: number
+                returned: number
+                collectionURI: string
+                items: Array<{
+                    resourceURI: string
+                    name: string
+                }>
+            }
+        }>
+    }
+    etag: string
 }

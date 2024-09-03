@@ -41,11 +41,11 @@ export default function HeroList({
 
   return (
     <div className={classes[MODULE_PREFIX]}>
-      <div data-testid="hero-list-page-filter" className={classes[`${MODULE_PREFIX}__filter`]}>
+      <div data-testid="test-hero-filter" className={classes[`${MODULE_PREFIX}__filter`]}>
         <InputFilter placeholder="SEARCH A CHARACTER..." onChange={handleFilterChange} />
         {filteredHeroes.length} RESULTS
       </div>
-      <div data-testid="hero-list-page-grid" className={classes[`${MODULE_PREFIX}__grid`]}>
+      <div data-testid="test-hero-list-grid" className={classes[`${MODULE_PREFIX}__grid`]}>
         {filteredHeroes.map((hero) => (
           <HeroCard
             key={hero.id}

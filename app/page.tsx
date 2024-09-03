@@ -8,7 +8,7 @@ async function HeroListListPage() {
   const heroList = await getHeroList({ limit: 50});
 
   return (
-    <div>
+    <div data-testid="hero-list-page">
       <Navbar logoSrc={marvelLogo} logoUrl={"/"} iconUrl={"/favorites"}/>
       <HeroList initialHeroList={heroList}/>
     </div>

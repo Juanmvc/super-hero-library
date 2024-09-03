@@ -24,9 +24,9 @@ const Navbar: React.FC<NavbarProps> = ({
   const favoritesCount = context?.favorites.length;
 
   return (
-    <nav className={classes[MODULE_PREFIX]}>
+    <nav data-testid="test-navbar" className={classes[MODULE_PREFIX]}>
       <div className={classes[`${MODULE_PREFIX}__wrapper`]}>
-        <Link href={logoUrl} className={classes[`${MODULE_PREFIX}__logo-link`]}>
+        <Link data-testid="test-navbar-logo-link" href={logoUrl} className={classes[`${MODULE_PREFIX}__logo-link`]}>
           <Image
             width={122}
             height={44}
@@ -35,18 +35,18 @@ const Navbar: React.FC<NavbarProps> = ({
             className={classes[`${MODULE_PREFIX}__logo-link__image`]}
           />
         </Link>
-          <Link href={iconUrl} className={classes[`${MODULE_PREFIX}__icon-link`]}>
-            <Image
-              width={24}
-              height={22}
-              src={heartFullIcon}
-              alt="Imagen heart"
-              className={classes[`${MODULE_PREFIX}__icon-link__image`]}
-            />
-            <div>
-              {favoritesCount}
-            </div>
-          </Link>
+        <Link data-testid="test-navbar-icon-link" href={iconUrl} className={classes[`${MODULE_PREFIX}__icon-link`]}>
+          <Image
+            width={24}
+            height={22}
+            src={heartFullIcon}
+            alt="Imagen heart"
+            className={classes[`${MODULE_PREFIX}__icon-link__image`]}
+          />
+          <div>
+            {favoritesCount}
+          </div>
+        </Link>
       </div>
     </nav>
   );
