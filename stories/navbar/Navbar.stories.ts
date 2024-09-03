@@ -23,6 +23,5 @@ export const Default: Story = {
     logoSrc: marvelLogo,
     logoUrl: "https://www.google.com/",  
     iconUrl: "https://www.google.com/",
-    count: 5
   },
 };

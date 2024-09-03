@@ -21,6 +21,5 @@ export const Default: Story = {
   args: {
     imageSrc: "https://via.placeholder.com/190",
     title: "Título del Comic de los vengadores",
-    subtitle: "1998",
   },
 };
