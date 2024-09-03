@@ -9,7 +9,6 @@
     justify-content: space-between;
     align-items: center;
     padding: spacing(1.5);
-    margin-bottom: spacing(6);
     margin-left: auto;
     margin-right: auto;
   }
@@ -23,6 +22,6 @@
     color: $color-white;
     display: flex;
     place-items: center;
-    gap: 4px;
+    gap: spacing(0.5);
   }
 }

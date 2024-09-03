@@ -1,4 +1,4 @@
-"use server";
+"use client";
 import React from "react";
 import classes from "./comicCard.module.scss";
 
@@ -7,13 +7,11 @@ const MODULE_PREFIX = "comic-card";
 export type ComicCardProps = {
   imageSrc: string;
   title: string;
-  subtitle: string;
 };
 
 const ComicCard: React.FC<ComicCardProps> = ({
   imageSrc,
   title,
-  subtitle
 }) => {
   return (
     <div className={classes[MODULE_PREFIX]}>
@@ -23,7 +21,6 @@ const ComicCard: React.FC<ComicCardProps> = ({
             className={classes[`${MODULE_PREFIX}__image`]}
         />
         <h3 className={classes[`${MODULE_PREFIX}__title`]}>{title}</h3>
-        <h4 className={classes[`${MODULE_PREFIX}__subtitle`]}>{subtitle}</h4>
     </div>
   );
 };

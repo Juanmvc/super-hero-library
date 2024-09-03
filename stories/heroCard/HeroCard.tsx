@@ -4,6 +4,7 @@ import classes from "./heroCard.module.scss";
 import Image from 'next/image';
 import heartFullIcon from "../../public/icons/heart-full.svg";
 import heartEmptyIcon from "../../public/icons/heart-empty.svg";
+import Link from "next/link";
 
 const MODULE_PREFIX = "hero-card";
 
@@ -30,7 +31,7 @@ const HeroCard: React.FC<HeroCardProps> = ({
   };
 
   return (
-    <a className={classes[MODULE_PREFIX]} href={url}>
+    <Link className={classes[MODULE_PREFIX]} href={url}>
       <div className={classes[`${MODULE_PREFIX}__image-wrapper`]}>
         <img
           src={imageSrc}
@@ -44,7 +45,7 @@ const HeroCard: React.FC<HeroCardProps> = ({
           <Image width={12} height={12} src={favorite ? heartFullIcon : heartEmptyIcon} alt="Icon description"/>
         </div>      
       </div>
-    </a>
+    </Link>
   );
 };
 
