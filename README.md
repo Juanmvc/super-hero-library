@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a super hero list app created using next 14 and react 18
 
 ## Getting Started
 
-First, run the development server:
+To install dependencies:
+
+```bash
+npm install
+```
+
+To run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To make the production build:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+To start the production build:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To start storybook with all components used in the app:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm run storybook
+```
 
-## Deploy on Vercel
+You can also run the tests created using jest with:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run test
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You can run the e2e tests created using cypress with (keep in mind that first you would have to have an instance of the app running on localhost:3000):
+
+```bash
+npm run e2e:chrome
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the Super hero app.
+Open [http://localhost:6006](http://localhost:6006) with your browser to see the Storybook app.
+
+## Technical decisions for the project
+
+### Entity Design
+**Anemic Model**: I decided to make some anemic entities since they didn't need complex logics for the use cases of this application so I practically use them as interfaces. In case the use cases would have been more complex I would have given more weight to the entities by transforming them into classes with the respective necessary logics.
+
+In this case I didn't find it necessary to do so since it would have made the application somewhat slower. In the end, with the transformations from primitives to entities that you have to do in next when you go from ‘server’ to ‘client’, you invest execution time and in this application it wasn't necessary.
+
+### Organization of Components and Projects
+**Standalone Components**: In larger projects, I would be inclined to move component definitions out of Storybook, placing them in a separate package. This would allow sharing these components as dependencies between different projects, improving code reusability and maintainability.
+  
+**Core Package**: In larger projects or with multiple applications, I would consider centralizing the business logic (including infrastructure, application and domain) in a "core" external package. This would facilitate reuse and access to this logic by other applications, promoting a more modular and scalable architecture. In this case I have simply added the ‘core’ as a folder within the application for simplicity.
+
+### API
+Seeing the amount of api calls that have to be made for some of the views in this project I would probably try to put the image urls together so that they are in the Hero object itself. Having to make a call for ‘Comic’ to get its image seems very expensive to me and is reflected in the load time.
+
