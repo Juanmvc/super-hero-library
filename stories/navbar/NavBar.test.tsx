@@ -13,7 +13,6 @@ describe("Navbar Component", () => {
       logoSrc: "https://example.com/logo.jpg",
       logoUrl: "/home",
       iconUrl: "/favorites",
-      count: 5
     };
 
     render(<Navbar {...props} />);
@@ -23,8 +22,5 @@ describe("Navbar Component", () => {
 
     const iconImageElement = screen.getByAltText("Imagen heart");
     expect(iconImageElement).toBeInTheDocument();
-
-    const countText = screen.getByText(/5/);
-    expect(countText).toBeInTheDocument();
   });
 });

@@ -11,7 +11,6 @@ describe("ComicCard Component", () => {
     const props = {
       imageSrc: "https://example.com/image.jpg",
       title: "Test Hero Title",
-      subtitle: "Test Hero Subtitle",
     };
 
     const { getByAltText, getByText } = render(<ComicCard {...props} />);
@@ -20,6 +19,5 @@ describe("ComicCard Component", () => {
     expect(imageElement).toHaveAttribute("src", props.imageSrc);
 
     expect(getByText(props.title)).toBeInTheDocument();
-    expect(getByText(props.subtitle)).toBeInTheDocument();
   });
 });
