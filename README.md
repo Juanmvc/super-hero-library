@@ -41,6 +41,8 @@ npm run test
 
 You can run the e2e tests created using cypress with (keep in mind that first you would have to have an instance of the app running on localhost:3000):
 
+(Given the nature of these tests that are launched waiting for a response from the api, they may fail if they are launched on a computer where there is no access to these public/private keys.)
+
 ```bash
 npm run e2e:chrome
 ```
