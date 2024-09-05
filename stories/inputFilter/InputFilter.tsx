@@ -27,6 +27,7 @@ const Filtro: React.FC<FiltroProps> = ({
       <Image src={lensIcon} width={20} height={20} alt="Ícono de búsqueda" />
       <input
         type="text"
+        data-testid="input"
         placeholder={placeholder}
         onChange={handleChange}
         className={classes[`${MODULE_PREFIX}__text`]}
