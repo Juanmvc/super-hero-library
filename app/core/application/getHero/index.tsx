@@ -1,5 +1,5 @@
 import { HeroProps } from "../../domain/entities/Hero";
-import adaptMarvelHero from "../../infrastructure/marvelApi/adapters/adaptMarvelHero";
+import adaptHero from "../../infrastructure/marvelApi/adapters/adaptMarvelHero";
 import { MarvelHeroList } from "../../infrastructure/marvelApi/apiTypes/MarvelHeroList";
 import HeroRepository from "../../infrastructure/marvelApi/repositories/HeroRepository";
 
@@ -14,7 +14,7 @@ const getHero = async ({
     id,
   });
 
-  const Hero = adaptMarvelHero(data);
+  const Hero = adaptHero(data);
   
   return Hero;
 };

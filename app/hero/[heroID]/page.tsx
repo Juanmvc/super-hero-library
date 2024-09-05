@@ -25,7 +25,7 @@ async function HeroDetailPage(context: {
     );
 
     return (
-      <div className={classes[MODULE_PREFIX]}>
+      <div className={classes[MODULE_PREFIX]} data-testid="comic-list-page">
         <Navbar logoSrc={marvelLogo} logoUrl={"/"} iconUrl={"/favorites"}/>
         <HeroHeader hero={hero}/>
         <div className={classes[`${MODULE_PREFIX}__title`]}>

@@ -1,6 +1,6 @@
 import { ComicProps } from "../../domain/entities/Comic";
-import adaptMarvelComic from "../../infrastructure/marvelApi/adapters/adaptMarvelComic";
-import { MarvelComicList } from "../../infrastructure/marvelApi/apiTypes/MarvelComicList";
+import adaptComic from "../../infrastructure/marvelApi/adapters/adaptMarvelComic";
+import { MarvelComic } from "../../infrastructure/marvelApi/apiTypes/MarvelComic";
 import ComicRepository from "../../infrastructure/marvelApi/repositories/ComicRepository";
 
 const getComic = async ({
@@ -9,12 +9,14 @@ const getComic = async ({
     id: number;
 }): Promise<ComicProps> => {
   const repository =
-    new ComicRepository<MarvelComicList>();
+    new ComicRepository<MarvelComic>();
   const { data } = await repository.getData({
     id,
   });
 
-  const Comic = adaptMarvelComic(data);
+  const Comic = adaptComic(data);
+
+  console.log(Comic)
   
   return Comic;
 };

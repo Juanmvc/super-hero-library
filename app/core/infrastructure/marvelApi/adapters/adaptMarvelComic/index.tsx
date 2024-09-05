@@ -1,7 +1,7 @@
 import { ComicProps } from "@/app/core/domain/entities/Comic";
-import { MarvelComicList } from "../../apiTypes/MarvelComicList";
+import { MarvelComic } from "../../apiTypes/MarvelComic";
 
-function adaptComic(marvelComics: MarvelComicList): ComicProps {
+function adaptComic(marvelComics: MarvelComic): ComicProps {
 
     const result = marvelComics.data.results[0]
     const match = result.resourceURI.match(/\/(\d+)$/);
