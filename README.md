@@ -1,5 +1,23 @@
 This is a super hero list app created using next 14 and react 18
 
+## Description of the proyect
+
+In this app you can search and list your favourite Marvel heroes. You can also save your favourite heroes and see which comics they have appeared in. Although the application initially shows you the first 50 superheroes when you filter them by name it will show you the heroes that contain that text in their name even if they do not appear in the initial view, this is because this filtering is not on that first list but because it is supported in the api. For the application we use the free Disney Marvel api.
+
+The application has three views:
+
+List of superheroes with filter
+![imagen](https://github.com/user-attachments/assets/b4dee224-bbd5-4688-900f-72b8f100133f)
+
+
+List of favourite superheroes with filter
+![imagen](https://github.com/user-attachments/assets/a384a9d3-08b5-4619-bc9f-1097d5dc59a2)
+
+
+Description of superheroes with their associated comics
+![imagen](https://github.com/user-attachments/assets/02b8d2bb-87e3-4c30-ae39-b6d027936399)
+
+
 ## Getting Started
 
 To install dependencies:
@@ -51,6 +69,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Open [http://localhost:6006](http://localhost:6006) with your browser to see the Storybook app.
 
 ## Technical decisions for the project
+
+### Technologies
+the latest version of Next has been used to improve its loading time when using SSR. Scss has been used to make it easier to work with styles as it adds variables, functions, loops... 
+
+For context purposes Context from react was chosen because it simplicity and adoption, for bigger proyects I may use Mobx, if it is a medium-sized project, or redux, if it is a very large project due to their performance (while redux has way more boilerplate and complexity).
+
+Jest has been used for unit testing and cypress has been used for e2e testing due to its wide and almost standardised use for this type of applications.
 
 ### Entity Design
 **Anemic Model**: I decided to make some anemic entities since they didn't need complex logics for the use cases of this application so I practically use them as interfaces. In case the use cases would have been more complex I would have given more weight to the entities by transforming them into classes with the respective necessary logics.
