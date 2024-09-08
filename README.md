@@ -1,6 +1,6 @@
 This is a super hero list app created using next 14 and react 18
 
-## Description of the proyect
+## Description of the project
 
 In this app you can search and list your favourite Marvel heroes. You can also save your favourite heroes and see which comics they have appeared in. Although the application initially shows you the first 50 superheroes when you filter them by name it will show you the heroes that contain that text in their name even if they do not appear in the initial view, this is because this filtering is not on that first list but because it is supported in the api. For the application we use the free Disney Marvel api.
 
